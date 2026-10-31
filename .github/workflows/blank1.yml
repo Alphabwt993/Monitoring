@@ -3,18 +3,17 @@ name: CI Pipeline
 on:
   pull_request:
     branches:
-      - main
       - master
       
   workflow_dispatch:
 
 jobs:
   test-scripts:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Checkout repository
-        uses: actions/actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Make scripts executable
         run: chmod +x check_api.sh analyze_logs.sh
